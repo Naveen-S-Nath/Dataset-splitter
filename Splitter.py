@@ -6,7 +6,7 @@ from tqdm import tqdm
 # Parameters
 split_ratio = 0.8  # 80% train, 20% val
 base_dir = os.getcwd()
-source_folder = os.path.join(base_dir, 'garbage_classification')  # Your main folder with class folders
+source_folder = os.path.join(base_dir, '!!!!!!Your dataset name!!!')  # Your main folder with class folders
 
 train_folder = os.path.join(base_dir, 'train')
 val_folder = os.path.join(base_dir, 'val')
@@ -26,7 +26,7 @@ for class_name in os.listdir(source_folder):
     os.makedirs(os.path.join(train_folder, class_name), exist_ok=True)
     os.makedirs(os.path.join(val_folder, class_name), exist_ok=True)
 
-    images = [img for img in os.listdir(class_path) if img.lower().endswith(('.jpg', '.jpeg', '.png'))]
+    images = [img for img in os.listdir(class_path) if img.lower().endswith(('.jpg', '.jpeg', '.png'))]#You can add more image types
     random.shuffle(images)
 
     split_index = int(len(images) * split_ratio)
